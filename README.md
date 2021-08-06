@@ -9,10 +9,10 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook file may be used to install only certain pieces of it, such as Filebeat.
 
-  [DVWA Playbook](Images/dvwa_playbook.png)
-  [ELK Playbook](Images/elk_playbook.png)
-  [Filebeat Playbook](Images/filebeat_playbook.png)
-  [Metricbeat Playbook](Images/metricbeat_playbook.png)
+  - [DVWA Playbook](https://github.com/Shifty558/JW-ELK-Stack/blob/main/Images/dvwa_playbook.png)
+  - [ELK Playbook](https://github.com/Shifty558/JW-ELK-Stack/blob/main/Images/elk_playbook.PNG)
+  - [Filebeat Playbook](https://github.com/Shifty558/JW-ELK-Stack/blob/main/Images/filebeat_playbook.png)
+  - [Metricbeat Playbook](https://github.com/Shifty558/JW-ELK-Stack/blob/main/Images/metricbeat_playbook.png)
 
 This document contains the following details:
 - Description of the Topology
@@ -86,7 +86,7 @@ The playbook implements the following tasks for the ELK Docker:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-  [Dokcer PS Output](Images/Docker_PS_Output.png)
+  [Dokcer PS Output](https://github.com/Shifty558/JW-ELK-Stack/blob/main/Images/ELK_Docker_PS_Output.PNG)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
@@ -103,9 +103,9 @@ We have installed the following Beats on these machines:
 These Beats allow us to collect the following information from each machine:
 - In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
   - Filebeats monitors log files based on specified rules, collects the logs, and sends to Elasticsearch or Logstash for indexing.
-    [Kibana Log Exxample](Images/Kibana_Logs.png)
+    [Kibana Log Exxample](https://github.com/Shifty558/JW-ELK-Stack/blob/main/Images/Kibana_Logs.PNG)
   - Metricbeats collects metrics from an OS and running services based on specified rules, and sends to Elasticsearch or Logstash.
-    [Kibana Metric Example](Images/Kibana_Metrics.png)
+    [Kibana Metric Example](https://github.com/Shifty558/JW-ELK-Stack/blob/main/Images/Kibana_Metrics.PNG)
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
@@ -120,25 +120,25 @@ Answer the following questions to fill in the blanks:
 - Where do you copy it? /etc/ansible
 - Which file do you update to make Ansible run the playbook on a specific machine? hosts
 - How do I specify which machine to install the ELK server on versus which to install Filebeat on? Configure hosts to direct ELK to the ELK private IP address and direct Filebeats to the webserver IP address.
-  [Ansible Hosts Configuration](Images/Ansible_Hosts_Config.png)
+  [Ansible Hosts Configuration](https://github.com/Shifty558/JW-ELK-Stack/blob/main/Images/Ansible_Hosts_Config.PNG)
 - Which URL do you navigate to in order to check that the ELK server is running? [Link to ELK Kibana Web Page](http://[your.ELK-VM.External.IP]:5601/app/kibana)
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
 
-#ssh jump_box_provisioner
-ssh -i ~/.ssh/id_rsa azdmin@<public_host_ip>
-
-#docker setup
-sudo apt install docker.io
-sudo docker pull cyberxsecurity/ubuntu.bionic
-sudo docker run ti cyberxsecurity/ubuntu:bionic bash
-sudo docker run -ti cyberxsecurity/ansible:latest bash
-
-#run docker
-sudo docker container list -a
-sudo docker start <container_name>
-sudo docker attach <container_name>
-
-#ssh container
-ansible webservers -m print
-ssh azdmin@<container_private_ip>
+1 #ssh jump_box_provisioner
+2 ssh -i ~/.ssh/id_rsa azdmin@<public_host_ip>
+3
+4 #docker setup
+5 sudo apt install docker.io
+6 sudo docker pull cyberxsecurity/ubuntu.bionic
+7 sudo docker run ti cyberxsecurity/ubuntu:bionic bash
+8 sudo docker run -ti cyberxsecurity/ansible:latest bash
+9
+10 #run docker
+11 sudo docker container list -a
+12 sudo docker start <container_name>
+13 sudo docker attach <container_name>
+14
+15 #ssh container
+16 ansible webservers -m print
+17 ssh azdmin@<container_private_ip>
