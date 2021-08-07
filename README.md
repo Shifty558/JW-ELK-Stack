@@ -27,14 +27,14 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly secure, in addition to restricting access to the network.
-- The Load Balencer provide a higher level of security by defending against distributed denial-of-service (DDoS) attacks by shifting attack traffic from the cloud network to the cloud provider
+- The Load Balancer provide a higher level of security by defending against distributed denial-of-service (DDoS) attacks by shifting attack traffic from the cloud network to the cloud provider
 - The Jump Box creates a secure and monitored pathway for administrators to manage devices within a network.
 
 _What aspect of security do load balancers protect?_
-- Load balancers distribute network traffic across mulitple servers to ensure no one server takes to much demand.  The security function of the load balancer defends against DDoS by shifting attacks away from the network.
+- Load balancers distribute network traffic across multiple servers to ensure no one server takes to much demand.  The security function of the load balancer defends against DDoS by shifting attacks away from the network.
 
 _What is the advantage of a jump box?_
-- Allows administrators a secure pathway to configure network devices within a sperate set of security rules.
+- Allows administrators a secure pathway to configure network devices within a separate set of security rules.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the data and system logs.
 
@@ -120,7 +120,7 @@ These Beats allow us to collect the following information from each machine:
 
 _In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
 - Filebeats monitors log files based on specified rules, collects the logs, and sends to Elasticsearch or Logstash for indexing.
-  - [Kibana Log Exxample](https://github.com/Shifty558/JW-ELK-Stack/blob/main/Images/Kibana_Logs.PNG)
+  - [Kibana Log Example](https://github.com/Shifty558/JW-ELK-Stack/blob/main/Images/Kibana_Logs.PNG)
 - Metricbeats collects metrics from an OS and running services based on specified rules, and sends to Elasticsearch or Logstash.
   - [Kibana Metric Example](https://github.com/Shifty558/JW-ELK-Stack/blob/main/Images/Kibana_Metrics.PNG)
 
