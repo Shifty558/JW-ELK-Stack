@@ -40,6 +40,7 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 
 _What does Filebeat watch for?_  
 - Filebeats monitors log files based on specified rules, collects the logs, and sends to Elasticsearch or Logstash. 
+
 _What does Metricbeat record?_ 
 - Metricbeats collects metrics from an OS and running services based on specified rules, and sends to Elasticsearch or Logstash.
 
