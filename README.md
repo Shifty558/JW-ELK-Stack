@@ -9,10 +9,10 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook file may be used to install only certain pieces of it, such as Filebeat.
 
-  - [DVWA Playbook](https://github.com/Shifty558/JW-ELK-Stack/blob/main/Images/dvwa_playbook.png)
-  - [ELK Playbook](https://github.com/Shifty558/JW-ELK-Stack/blob/main/Images/elk_playbook.PNG)
-  - [Filebeat Playbook](https://github.com/Shifty558/JW-ELK-Stack/blob/main/Images/filebeat_playbook.png)
-  - [Metricbeat Playbook](https://github.com/Shifty558/JW-ELK-Stack/blob/main/Images/metricbeat_playbook.png)
+- [DVWA Playbook](https://github.com/Shifty558/JW-ELK-Stack/blob/main/Images/dvwa_playbook.png)
+- [ELK Playbook](https://github.com/Shifty558/JW-ELK-Stack/blob/main/Images/elk_playbook.PNG)
+- [Filebeat Playbook](https://github.com/Shifty558/JW-ELK-Stack/blob/main/Images/filebeat_playbook.png)
+- [Metricbeat Playbook](https://github.com/Shifty558/JW-ELK-Stack/blob/main/Images/metricbeat_playbook.png)
 
 This document contains the following details:
 - Description of the Topology
@@ -30,15 +30,17 @@ Load balancing ensures that the application will be highly secure, in addition t
 - Load Balencer provide a higher level of security by defending against distributed denial-of-service (DDoS) attacks by shifting attack traffic from the cloud network to the cloud provider
 - The Jump Box creates a secure and monitored pathway for administrators to manage devices within a network.
 
-What aspect of security do load balancers protect?
+_What aspect of security do load balancers protect?_
 - Load balancers distribute network traffic across mulitple servers to ensure no one server takes to much demand.  The security function of the load balancer defends against DDoS by shifting attacks away from the network.
 
-What is the advantage of a jump box?
+_What is the advantage of a jump box?_
 - Allows administrators a secure pathway to configure network devices within a sperate set of security rules.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the data and system logs.
-- What does Filebeat watch for?  Filebeats monitors log files based on specified rules, collects the logs, and sends to Elasticsearch or Logstash. 
-- What does Metricbeat record? Metricbeats collects metrics from an OS and running services based on specified rules, and sends to Elasticsearch or Logstash.
+_What does Filebeat watch for?_  
+- Filebeats monitors log files based on specified rules, collects the logs, and sends to Elasticsearch or Logstash. 
+_What does Metricbeat record?_ 
+- Metricbeats collects metrics from an OS and running services based on specified rules, and sends to Elasticsearch or Logstash.
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
@@ -55,11 +57,14 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the DVWA machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+_Add whitelisted IP addresses_
 - 134.215.218.43
 
 Machines within the network can only be accessed by SSH via Jump Box.
-- Which machine did you allow to access your ELK VM? azdmin
-- What was its IP address? 134.215.218.43
+_Which machine did you allow to access your ELK VM?_
+- azdmin
+_What was its IP address?_
+- 134.215.218.43
 
 A summary of the access policies in place can be found in the table below.
 
@@ -73,9 +78,11 @@ A summary of the access policies in place can be found in the table below.
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
+_What is the main advantage of automating configuration with Ansible?_
 - Network administrators can automatically configure multiple machines at the same time using an ansible playbook.
 
 The playbook implements the following tasks for the ELK Docker:
+_In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
 - Direct Ansible ELK
 - Download docker.io
 - Install phython3-pip
@@ -90,22 +97,22 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- List the IP addresses of the machines you are monitoring
-  - Web-1 10.0.0.7
-  - Web-2 10.0.0.6
-  - ELK 10.1.0.4
+_List the IP addresses of the machines you are monitoring_
+- Web-1 10.0.0.7
+- Web-2 10.0.0.6
+- ELK 10.1.0.4
 
 We have installed the following Beats on these machines:
-- Specify which Beats you successfully installed
-  - Filebeats
-  - Metricbeats
+_Specify which Beats you successfully installed_
+- Filebeats
+- Metricbeats
 
 These Beats allow us to collect the following information from each machine:
-- In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
-  - Filebeats monitors log files based on specified rules, collects the logs, and sends to Elasticsearch or Logstash for indexing.
-    [Kibana Log Exxample](https://github.com/Shifty558/JW-ELK-Stack/blob/main/Images/Kibana_Logs.PNG)
-  - Metricbeats collects metrics from an OS and running services based on specified rules, and sends to Elasticsearch or Logstash.
-    [Kibana Metric Example](https://github.com/Shifty558/JW-ELK-Stack/blob/main/Images/Kibana_Metrics.PNG)
+_In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+- Filebeats monitors log files based on specified rules, collects the logs, and sends to Elasticsearch or Logstash for indexing.
+  - [Kibana Log Exxample](https://github.com/Shifty558/JW-ELK-Stack/blob/main/Images/Kibana_Logs.PNG)
+- Metricbeats collects metrics from an OS and running services based on specified rules, and sends to Elasticsearch or Logstash.
+  - [Kibana Metric Example](https://github.com/Shifty558/JW-ELK-Stack/blob/main/Images/Kibana_Metrics.PNG)
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
@@ -115,13 +122,13 @@ SSH into the control node and follow the steps below:
 - Update the hosts file to include target VM IP addresses
 - Run the playbook, and navigate to web page to check that the installation worked as expected.
 
-Answer the following questions to fill in the blanks:
-- Which file is the playbook? YAML or .yml 
-- Where do you copy it? /etc/ansible
-- Which file do you update to make Ansible run the playbook on a specific machine? hosts
-- How do I specify which machine to install the ELK server on versus which to install Filebeat on? Configure hosts to direct ELK to the ELK private IP address and direct Filebeats to the webserver IP address.
-  [Ansible Hosts Configuration](https://github.com/Shifty558/JW-ELK-Stack/blob/main/Images/Ansible_Hosts_Config.PNG)
-- Which URL do you navigate to in order to check that the ELK server is running? [Link to ELK Kibana Web Page](http://[your.ELK-VM.External.IP]:5601/app/kibana)
+_Answer the following questions to fill in the blanks:_
+_Which file is the playbook?_ YAML or .yml 
+_Where do you copy it?_ /etc/ansible
+_Which file do you update to make Ansible run the playbook on a specific machine?_ hosts
+_How do I specify which machine to install the ELK server on versus which to install Filebeat on?_ Configure hosts to direct ELK to the ELK private IP address and direct Filebeats to the webserver IP address.
+  - [Ansible Hosts Configuration](https://github.com/Shifty558/JW-ELK-Stack/blob/main/Images/Ansible_Hosts_Config.PNG)
+_Which URL do you navigate to in order to check that the ELK server is running?_ [Link to ELK Kibana Web Page](http://[your.ELK-VM.External.IP]:5601/app/kibana)
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
 
