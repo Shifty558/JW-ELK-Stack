@@ -37,6 +37,7 @@ _What is the advantage of a jump box?_
 - Allows administrators a secure pathway to configure network devices within a sperate set of security rules.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the data and system logs.
+
 _What does Filebeat watch for?_  
 - Filebeats monitors log files based on specified rules, collects the logs, and sends to Elasticsearch or Logstash. 
 _What does Metricbeat record?_ 
@@ -57,12 +58,15 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the DVWA machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+
 _Add whitelisted IP addresses_
 - 134.215.218.43
 
 Machines within the network can only be accessed by SSH via Jump Box.
+
 _Which machine did you allow to access your ELK VM?_
 - azdmin
+
 _What was its IP address?_
 - 134.215.218.43
 
