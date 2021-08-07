@@ -93,7 +93,7 @@ _In 3-5 bullets, explain the steps of the ELK installation play. E.g., install D
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-  [Dokcer PS Output](https://github.com/Shifty558/JW-ELK-Stack/blob/main/Images/ELK_Docker_PS_Output.PNG)
+- [Docker PS Output](https://github.com/Shifty558/JW-ELK-Stack/blob/main/Images/ELK_Docker_PS_Output.PNG)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
@@ -132,20 +132,20 @@ _Which URL do you navigate to in order to check that the ELK server is running?_
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
 
-1 #ssh jump_box_provisioner
-2 ssh -i ~/.ssh/id_rsa azdmin@<public_host_ip>
-3
-4 #docker setup
-5 sudo apt install docker.io
-6 sudo docker pull cyberxsecurity/ubuntu.bionic
-7 sudo docker run ti cyberxsecurity/ubuntu:bionic bash
-8 sudo docker run -ti cyberxsecurity/ansible:latest bash
-9
-10 #run docker
-11 sudo docker container list -a
-12 sudo docker start <container_name>
-13 sudo docker attach <container_name>
-14
-15 #ssh container
-16 ansible webservers -m print
-17 ssh azdmin@<container_private_ip>
+1. #ssh jump_box_provisioner
+2. ssh -i ~/.ssh/id_rsa azdmin@<public_host_ip>
+3.
+4. #docker setup
+5. sudo apt install docker.io
+6. sudo docker pull cyberxsecurity/ubuntu.bionic
+7. sudo docker run ti cyberxsecurity/ubuntu:bionic bash
+8. sudo docker run -ti cyberxsecurity/ansible:latest bash
+9.
+10. #run docker
+11. sudo docker container list -a
+12. sudo docker start <container_name>
+13. sudo docker attach <container_name>
+14.
+15. #ssh container
+16. ansible webservers -m print
+17. ssh azdmin@<container_private_ip>
