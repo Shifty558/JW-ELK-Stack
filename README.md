@@ -27,7 +27,7 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly secure, in addition to restricting access to the network.
-- Load Balencer provide a higher level of security by defending against distributed denial-of-service (DDoS) attacks by shifting attack traffic from the cloud network to the cloud provider
+- The Load Balencer provide a higher level of security by defending against distributed denial-of-service (DDoS) attacks by shifting attack traffic from the cloud network to the cloud provider
 - The Jump Box creates a secure and monitored pathway for administrators to manage devices within a network.
 
 _What aspect of security do load balancers protect?_
@@ -39,10 +39,10 @@ _What is the advantage of a jump box?_
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the data and system logs.
 
 _What does Filebeat watch for?_  
-- Filebeats monitors log files based on specified rules, collects the logs, and sends to Elasticsearch or Logstash. 
+- Filebeat monitors log files based on specified rules, collects the logs, and sends to Elasticsearch or Logstash. 
 
 _What does Metricbeat record?_ 
-- Metricbeats collects metrics from an OS and running services based on specified rules, and sends to Elasticsearch or Logstash.
+- Metricbeat collects metrics from an OS and running services based on specified rules, and sends to Elasticsearch or Logstash.
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
@@ -61,15 +61,15 @@ The machines on the internal network are not exposed to the public Internet.
 Only the DVWA machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 
 _Add whitelisted IP addresses_
-- 134.215.218.43
+- 134.215.218.43 <client public IP>
 
 Machines within the network can only be accessed by SSH via Jump Box.
 
 _Which machine did you allow to access your ELK VM?_
-- azdmin
+- Jump Box Provisioner
 
 _What was its IP address?_
-- 134.215.218.43
+- 10.0.0.8
 
 A summary of the access policies in place can be found in the table below.
 
@@ -78,7 +78,7 @@ A summary of the access policies in place can be found in the table below.
 | Jump-Box-Provisioner | No                  | 134.215.218.43          |
 | Web-1                | Yes                 | 10.0.0.8 134.215.218.43 |
 | Web-2                | Yes                 | 10.0.0.8 134.215.218.43 |
-| ELKSever             | No                  | 134.215.218.43          |
+| ELKSever             | No                  | 10.0.0.8                |
 
 ### Elk Configuration
 
